@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar text-center>
+    <ion-title>{{producto.producto}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row >
+      <ion-col>
+        <img [src]="producto.codigo | imagen" >
+      </ion-col>
+    </ion-row >
+    <ion-row >
+      <ion-col >
+        <h3>{{producto.producto}}</h3>
+        <p>
+          <b>
+          Precio:
+          </b>
+          {{producto.precio_compra | currency:'USD':true }}
+        </p>
+        <p>
+          {{producto.descripcion}}
+          <br>
+          <b>
+            {{producto.proveedor}}
+          </b>
+        </p>
+
+        <button ion-button
+                (click)="_cs.agregar_carrito(producto)"
+                block
+                icon-left
+                >
+          <ion-icon name="cart"></ion-icon>
+          Agregar al carrito
+        </button>
+      </ion-col>
+    </ion-row >
+  </ion-grid>
+
+
+
+</ion-content>

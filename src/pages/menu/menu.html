@@ -1,0 +1,21 @@
+
+<ion-split-pane when="lg">
+  <!--  our side menu  -->
+  <ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <button ion-item (click)="open('TabsPage')" menuClose>Home</button>
+        <button ion-item (click)="open('MapsPage')" menuClose>News</button>
+        <button ion-item (click)="open('FilePage')" menuClose>Profile</button>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+  <ion-nav [root]="rootPage" #content></ion-nav>
+<ion-split-pane>
