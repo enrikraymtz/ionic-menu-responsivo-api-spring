@@ -16,7 +16,7 @@ export class ProductoPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private _cs: CarritoService) {
-
+      this._cs.index();
       this.producto = this.navParams.get( "producto" );
       console.log(this.producto, );
   }

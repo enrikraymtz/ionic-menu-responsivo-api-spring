@@ -21,8 +21,13 @@ export class ProductosService {
     this.headers = new Headers({
         'Content-Type': 'application/json'
     });
+    this._us.index();
     this.cargar_todos();
     this.cargar_lineas();
+  }
+
+  index(){
+    return 0;
   }
 
   cargar_lineas(){
@@ -82,15 +87,6 @@ export class ProductosService {
       return promesa;
   }
 
-  private agrupar( arr:any, tamano: number){
-    let nuevoArreglo = [];
-    console.log(arr);
-    for ( let i=0; i <= arr.length; i+=tamano){
-      nuevoArreglo.push( arr.slice(i, i+tamano ));
-    }
-    console.log(nuevoArreglo);
-    return nuevoArreglo;
-  }
 
   buscar_producto( termino:string){
       let url = URL_SERVICIOS + "/productos/buscar/"+termino;

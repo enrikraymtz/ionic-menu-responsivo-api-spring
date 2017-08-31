@@ -1,3 +1,4 @@
+/*
 export { CarritoPage } from './carrito/carrito';
 export { CategoriasPage } from './categorias/categorias';
 export { HomePage } from './home/home';
@@ -7,3 +8,7 @@ export { OrdenesDetallePage } from './ordenes-detalle/ordenes-detalle';
 export { PorCategoriasPage } from './por-categorias/por-categorias';
 export { ProductoPage } from './producto/producto';
 export { TabsPage } from './tabs/tabs';
+export { MapsPage } from './maps/maps';
+export { FilePage } from './file/file';
+export { BusquedaPage } from './busqueda/busqueda';
+*/

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { CarritoService } from '../../providers/index.services';
-import { OrdenesDetallePage } from '../index.paginas';
+//import { OrdenesDetallePage } from '../index.paginas';
 
 @IonicPage()
 @Component({
@@ -11,7 +11,7 @@ import { OrdenesDetallePage } from '../index.paginas';
 })
 export class OrdenesPage {
 
-  ordenesDetalle = OrdenesDetallePage;
+  ordenesDetalle = "OrdenesDetallePage";
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,

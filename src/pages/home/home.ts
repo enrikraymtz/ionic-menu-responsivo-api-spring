@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 
 import { ProductosService, CarritoService, UsuarioService } from "../../providers/index.services";
-import { ProductoPage } from '../index.paginas';
+//import { ProductoPage } from '../index.paginas';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -14,7 +15,9 @@ export class HomePage {
               private _ps: ProductosService,
               private _cs: CarritoService,
               private _us: UsuarioService) {
-
+      this._cs.index();
+      this._ps.index();
+      this._us.index();
   }
 
   siguiente_pagina( infiniteScroll ){
@@ -24,7 +27,7 @@ export class HomePage {
   }
 
   enviarProducto( producto:any ){
-    this.navCtrl.push( ProductoPage, { producto }  )
+    this.navCtrl.push( "ProductoPage", { producto }  )
   }
 
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ProductosService } from '../../providers/productos/productos';
-import { ProductoPage } from '../index.paginas';
+//import { ProductoPage } from '../index.paginas';
 
 @IonicPage()
 @Component({
@@ -34,7 +34,7 @@ export class PorCategoriasPage {
   }
 
   enviarProducto( producto:any ){
-    this.navCtrl.push( ProductoPage, { producto }  );
+    this.navCtrl.push( "ProductoPage", { producto }  );
   }
 
 }

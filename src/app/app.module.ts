@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -10,68 +10,51 @@ import { MyApp } from './app.component';
 import { CarritoService } from '../providers/carrito/carrito';
 import { ProductosService } from '../providers/productos/productos';
 import { UsuarioService } from '../providers/usuario/usuario';
+import { UbicacionService } from '../providers/ubicacion/ubicacion';
 
 //pipes
-import { ImagenPipe } from '../pipes/imagen/imagen';
 
 //plugins
 import { IonicStorageModule } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation';
 
-//Components
-import {
-  CarritoPage,
-  CategoriasPage,
-  HomePage,
-  LoginPage,
-  OrdenesPage,
-  PorCategoriasPage,
-  ProductoPage,
-  TabsPage,
-  OrdenesDetallePage
-} from '../pages/index.paginas';
+//mapas
+import { AgmCoreModule } from '@agm/core';
+
+import { MapsPage } from '../pages/maps/maps';
+import { TabsPage } from '../pages/tabs/tabs'
 
 @NgModule({
   declarations: [
     MyApp,
-    ImagenPipe,
-    CarritoPage,
-    CategoriasPage,
-    HomePage,
-    LoginPage,
-    OrdenesPage,
-    OrdenesDetallePage,
-    PorCategoriasPage,
-    ProductoPage,
+    MapsPage,
     TabsPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyASWjtsLS3cT6eqz1ASh84yOD0cOY8kwko'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    CarritoPage,
-    CategoriasPage,
-    HomePage,
-    LoginPage,
-    OrdenesPage,
-    OrdenesDetallePage,
-    PorCategoriasPage,
-    ProductoPage,
+    MapsPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CarritoService,
+    Geolocation,
     ProductosService,
-    UsuarioService
-  ]
+    UsuarioService,
+    UbicacionService
+  ],
+  schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

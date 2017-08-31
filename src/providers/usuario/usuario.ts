@@ -26,6 +26,10 @@ export class UsuarioService {
     });
   }
 
+  index(){
+    return 0;
+  }
+
   activo():boolean{
     if( this.token ){
       return true;

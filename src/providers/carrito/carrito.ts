@@ -10,7 +10,7 @@ import { UsuarioService } from '../usuario/usuario';
 import { URL_SERVICIOS } from '../../config/url.servicios';
 
 //Paginas que funcionaran como modalCtrl
-import { LoginPage, CarritoPage } from '../../pages/index.paginas';
+//import { LoginPage, CarritoPage } from '../../pages/index.paginas';
 
 @Injectable()
 export class CarritoService {
@@ -35,6 +35,10 @@ export class CarritoService {
     });
   }
 
+  index(){
+    return 0;
+  }
+  
   remove_item( idx:number ){
     this.items.splice( idx, 1 );
     this.guardar_storage();
@@ -44,17 +48,17 @@ export class CarritoService {
     let modal:any;
     if( this._us.token ){
       //Mostrar carrito
-      modal = this.modalCtrl.create( CarritoPage );
+      modal = this.modalCtrl.create( "CarritoPage" );
     }else{
       //Mostrar modal
-      modal = this.modalCtrl.create( LoginPage );
+      modal = this.modalCtrl.create( "LoginPage" );
     }
 
     modal.present();
 
     modal.onDidDismiss( (abrirCarrito:boolean) =>{
       if (abrirCarrito){
-        this.modalCtrl.create( CarritoPage ).present();
+        this.modalCtrl.create( "CarritoPage" ).present();
       }
     })
   }

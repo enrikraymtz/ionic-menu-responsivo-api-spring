@@ -14,6 +14,8 @@ export class CarritoPage {
               public navParams: NavParams,
               private _cs: CarritoService,
               private viewCtrl: ViewController) {
+    this._cs.index();
+    this.viewCtrl.data;
   }
 
 }

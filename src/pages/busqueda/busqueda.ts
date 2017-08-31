@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ProductosService } from '../../providers/index.services';
-import { ProductoPage } from '../index.paginas';
+//import { ProductoPage } from '../producto/producto';
 
 @IonicPage()
 @Component({
@@ -26,7 +26,7 @@ export class BusquedaPage {
   }
 
   enviarProducto( producto:any ){
-    this.navCtrl.push( ProductoPage, { producto }  )
+    this.navCtrl.push( "ProductoPage", { producto }  )
   }
 
 }
